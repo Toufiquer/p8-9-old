@@ -8,3 +8,16 @@
    c. much more from doc
 
 3. React Router dom
+   a. index.js =>
+   <BrowserRouter>
+   <App />
+   </BrowserRouter>,
+   b. app.js =>
+   <Routes>
+   <Route path="/" element={<Home></Home>}></Route>
+   <Route path="/products" element={<Products></Products>}></Route>
+   <Route path="/users" element={<Users></Users>}></Route>
+   </Routes>
+
+4. Hero Icon
+   a. npm install @heroicons/react
