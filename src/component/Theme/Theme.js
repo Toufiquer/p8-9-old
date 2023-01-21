@@ -1,15 +1,16 @@
 import React, { useContext, useState } from "react";
-import { ChevronDownIcon, MoonIcon, StarIcon, SunIcon } from "@heroicons/react/24/solid";
+import { ChevronDownIcon, MoonIcon, StarIcon, SunIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { ThemeData, ThemeMode } from "../../App";
 import getThemeVariants from "./getThemeVariants";
 
 const Theme = () => {
   const [themeMode, setThemeMode] = useContext(ThemeMode);
   const [themeData, setThemeData] = useContext(ThemeData);
-  const [toggle, setToggle] = useState(true); //   Get Next Theme data and set it to themeData
+  const [toggle, setToggle] = useState(true);
+  //   Get Next Theme data and set it to themeData
   const SetNewTheme = (themeName) => {
-    const themeData = getThemeVariants(themeName);
-    setThemeData(themeData);
+    const getVariants = getThemeVariants(themeName);
+    setThemeData(getVariants);
     setThemeMode(themeName);
   };
   const handleTheme = () => {
@@ -37,7 +38,8 @@ const Theme = () => {
         {(themeMode === "dark" && <SunIcon className={`${iconClass}`} />) || (themeMode === "light" && <StarIcon className={`${iconClass}`} />) || (themeMode === "sky" && <MoonIcon className={`${iconClass}`} />) || "Theme"}
       </div>
       <div>
-        <ChevronDownIcon className={`${iconClass}`} onClick={() => setToggle(!toggle)} />
+        <div onClick={() => setToggle(!toggle)}>{toggle ? <ChevronDownIcon className={`${iconClass}`} /> : <XMarkIcon className={`${iconClass}`} />}</div>
+
         <div className={`${toggle ? "hidden" : "block"} absolute ${backgroundII} py-2 px-1 ml-[-5px]`}>
           <SunIcon title="Light Theme" onClick={() => SetNewTheme("light")} className={`${iconClass} ${hoverTextII} m-1`} />
           <MoonIcon title="Dark Theme" onClick={() => SetNewTheme("dark")} className={`${iconClass} ${hoverTextII} m-1`} />
