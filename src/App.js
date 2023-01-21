@@ -7,6 +7,8 @@ import Products from "./component/Products/Products";
 import Users from "./component/Users/Users";
 import { useThemeDetector } from "./hooks/useThemeDetector";
 import getThemeVariants from "./component/Theme/getThemeVariants";
+import Charts from "./component/Charts/Charts";
+import NotFound from "./component/NotFound/NotFound";
 export const ThemeMode = createContext("dark");
 export const ThemeData = createContext({});
 function App() {
@@ -25,8 +27,10 @@ function App() {
         <Navbar></Navbar>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/products" element={<Products></Products>}></Route>
           <Route path="/users" element={<Users></Users>}></Route>
+          <Route path="/products" element={<Products></Products>}></Route>
+          <Route path="/charts" element={<Charts></Charts>}></Route>
+          <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </ThemeData.Provider>
     </ThemeMode.Provider>

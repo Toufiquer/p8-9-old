@@ -11,7 +11,6 @@ root.render(
     <BrowserRouter>
       <App className={`duration-800 `} />
     </BrowserRouter>
-    ,
   </React.StrictMode>
 );
 

@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { ThemeData } from "../../App";
-
-const Products = () => {
+const Charts = () => {
   const [themeData] = useContext(ThemeData);
   const { background } = themeData;
-  return <div className={`${background} min-h-screen p-4 pt-16`}>Products</div>;
+  return <div className={`${background} min-h-screen p-4 pt-16`}>Charts</div>;
 };
 
-export default Products;
+export default Charts;
