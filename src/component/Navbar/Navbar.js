@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MoonIcon } from "@heroicons/react/24/solid";
+import Theme from "../Theme/Theme";
 
 const Navbar = () => {
   return (
@@ -23,7 +23,7 @@ const Navbar = () => {
             </li>
             <li></li>
           </ul>
-          <MoonIcon className="h-6 w-6 text-blue-500 cursor-pointer" />
+          <Theme></Theme>
         </nav>
       </header>
     </div>

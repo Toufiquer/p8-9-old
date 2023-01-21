@@ -1,12 +1,18 @@
 # Install dependencies
 
 1. React
+2. Tailwind css
+3. React Router Dom
+4. Hero Icon
+
+## Details
+
+1. React
    a. npx crate-react-app my-app
 2. Tailwind css
    a. npm install -D tailwindcss
    b. npx tailwindcss init
    c. much more from doc
-
 3. React Router dom
    a. index.js =>
    <BrowserRouter>
@@ -21,3 +27,23 @@
 
 4. Hero Icon
    a. npm install @heroicons/react
+
+# Working Tree
+
+### Theme Configuration
+
+1. Inside Theme component you got getThemeVariants. Here you can customize you theme color.
+2. And Inside Theme you can modify your theme. Event Handlers will get data from getThemeVariants and put it to context(app.js)
+
+### Setup Context for Theme Configuration
+
+1. Create two context one for themeMode (Current theme) and another for themeVariables.
+2. Code will be like this:
+   const ThemeMode = createContext("dark");
+   const ThemeData = createContext({});
+   const [currentTheme, setCurrentTheme] = useState("dark");
+   const [themeData, setThemeData] = useState({});
+   <ThemeMode.Provider value={[currentTheme, setCurrentTheme]}>
+   <ThemeData.Provider value={[themeData, setThemeData]}>
+3. Inside Theme.js you get data from useContext and modify and put it to context(app.js)
+4. Use it anywhere you want.
