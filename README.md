@@ -4,7 +4,7 @@
 2. Tailwind css
 3. React Router Dom
 4. Hero Icon
-
+5. Axios
 ## Details
 
 1. React
@@ -27,7 +27,8 @@
 
 4. Hero Icon
    a. npm install @heroicons/react
-
+5. Axios
+   a. npm install axios
 # Working Tree
 
 ### Theme Configuration
