@@ -18,7 +18,6 @@ const Theme = () => {
     switch (themeMode) {
       case "dark":
         SetNewTheme("light");
-        console.log(themeMode, "inside");
         break;
       case "light":
         SetNewTheme("sky");
