@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ThemeData } from "../../App";
 import Theme from "../Theme/Theme";
 
 const Navbar = () => {
+  const [themeData] = useContext(ThemeData);
+  const { backgroundI, text, textI, hoverText, hoverTextI } = themeData;
   return (
-    <div className={`pb-3 pt-2 bg-blue-300 text-xl `}>
+    <div className={`pb-3 pt-2 ${backgroundI} ${text} text-xl `}>
       <header className={`flex justify-between items-center container mx-auto`}>
-        <span className="flex justify-between items-center ">Toufiquer</span>
+        <span className={`flex justify-between items-center ${textI} ${hoverTextI} text-semibold`}>Toufiquer</span>
         <nav className={`flex gap-4`}>
           <ul className={`flex gap-4`}>
             <li>

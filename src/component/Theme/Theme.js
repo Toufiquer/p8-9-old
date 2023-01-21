@@ -30,8 +30,8 @@ const Theme = () => {
       // setThemeMode(themeMode);
     }
   };
-  const { backgroundII, text, hoverTextII } = themeData;
-  const iconClass = ` h-6 w-6 ${text} cursor-pointer`;
+  const { backgroundII, textII, hoverTextII } = themeData;
+  const iconClass = ` h-6 w-6 ${textII} ${hoverTextII} cursor-pointer`;
   return (
     <div className={`flex gap-2`}>
       <div className="" onClick={handleTheme}>
@@ -40,9 +40,9 @@ const Theme = () => {
       <div>
         <ChevronDownIcon className={`${iconClass}`} onClick={() => setToggle(!toggle)} />
         <div className={`${toggle ? "hidden" : "block"} absolute ${backgroundII} py-2 px-1 ml-[-5px]`}>
-          <SunIcon onClick={() => SetNewTheme("light")} className={`${iconClass} ${hoverTextII} m-1`} />
-          <MoonIcon onClick={() => SetNewTheme("dark")} className={`${iconClass} ${hoverTextII} m-1`} />
-          <StarIcon onClick={() => SetNewTheme("sky")} className={`${iconClass} ${hoverTextII} m-1`} />
+          <SunIcon title="Light Theme" onClick={() => SetNewTheme("light")} className={`${iconClass} ${hoverTextII} m-1`} />
+          <MoonIcon title="Dark Theme" onClick={() => SetNewTheme("dark")} className={`${iconClass} ${hoverTextII} m-1`} />
+          <StarIcon title="Sky Theme" onClick={() => SetNewTheme("sky")} className={`${iconClass} ${hoverTextII} m-1`} />
         </div>
       </div>
     </div>
