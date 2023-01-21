@@ -18,9 +18,9 @@ const Users = () => {
     console.log(id);
   };
   return (
-    <div className={`${background} min-h-screen p-4 pt-16 grid grid-cols-1 md:grid-cols-[1fr_360px] ${text}`}>
+    <div className={`${background} min-h-screen p-4 pt-16 grid grid-cols-1 md:grid-cols-[1fr_360px] ${text} gap-2`}>
       <UsersContainer users={users} handleAdd={handleAdd} handleRemove={handleRemove}></UsersContainer>
-      <UsersCart></UsersCart>
+      <UsersCart users={users} handleAdd={handleAdd} handleRemove={handleRemove}></UsersCart>
     </div>
   );
 };
