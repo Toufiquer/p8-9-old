@@ -8,5 +8,16 @@ const filterByIds = (ids, users) => {
   }
   return allUsers;
 };
+const filterProductsByIds = (ids, products) => {
+  const allProducts = [];
+  for (let storedId in ids) {
+    const product = products.find((curr) => curr.id === storedId);
+    if (product) {
+      product.quantity = ids[storedId];
+      allProducts.push(product);
+    }
+  }
+  return allProducts;
+};
 
-export default filterByIds;
+export { filterByIds, filterProductsByIds };

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { ThemeData } from "../../App";
-import filterByIds from "../utilities/filterByIds";
+import { filterByIds } from "../utilities/filterByIds";
 import { getItem, removeUser, saveUser } from "../utilities/manageDB";
 import UsersCart from "./UsersCart";
 import UsersContainer from "./UsersContainer";
