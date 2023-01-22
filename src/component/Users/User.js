@@ -2,7 +2,7 @@ import { UserCircleIcon, UserMinusIcon, UserPlusIcon } from "@heroicons/react/24
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ThemeData } from "../../App";
-import { ButtonAddUser, ButtonRemoveUser, ButtonDetailsUser } from "../Button/Button";
+import { ButtonAdd, ButtonRemove, ButtonDetails } from "../Button/Button";
 
 const User = ({ user: { id, name, email, img }, handleAdd, handleRemove }) => {
   const navigate = useNavigate();
@@ -26,20 +26,20 @@ const User = ({ user: { id, name, email, img }, handleAdd, handleRemove }) => {
       </div>
       <div className="flex justify-between">
         <div className="flex">
-          <ButtonAddUser handler={() => handleAdd(id)}>
+          <ButtonAdd handler={() => handleAdd(id)}>
             <div className="flex">
               Add <UserPlusIcon className={`h-6 w-6 ml-2`}></UserPlusIcon>
             </div>
-          </ButtonAddUser>
-          <ButtonRemoveUser handler={() => handleRemove(id)}>
+          </ButtonAdd>
+          <ButtonRemove handler={() => handleRemove(id)}>
             <div className="flex">
               Remove <UserMinusIcon className={`h-6 w-6 ml-2`}></UserMinusIcon>
             </div>
-          </ButtonRemoveUser>
+          </ButtonRemove>
         </div>
-        <ButtonDetailsUser handler={() => navigate(`/users/${id}`)} name={name}>
+        <ButtonDetails handler={() => navigate(`/users/${id}`)} name={name}>
           <UserCircleIcon className={`h-6 w-6`}></UserCircleIcon>
-        </ButtonDetailsUser>
+        </ButtonDetails>
       </div>
     </div>
   );
