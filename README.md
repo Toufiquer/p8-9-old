@@ -5,6 +5,8 @@
 3. React Router Dom
 4. Hero Icon
 5. Axios
+6. Recharts
+
 ## Details
 
 1. React
@@ -29,6 +31,10 @@
    a. npm install @heroicons/react
 5. Axios
    a. npm install axios
+
+6. Recharts
+   a. npm install recharts
+
 # Working Tree
 
 ### Theme Configuration
@@ -48,3 +54,8 @@
    <ThemeData.Provider value={[themeData, setThemeData]}>
 3. Inside Theme.js you get data from useContext and modify and put it to context(app.js)
 4. Use it anywhere you want.
+
+### After That User Page Configuration
+
+1. All functions inside users.js
+   $$ Products are same as User Page.

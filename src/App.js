@@ -19,7 +19,6 @@ function App() {
   const [themeData, setThemeData] = useState({});
   const getThemeMode = useThemeDetector();
   useEffect(() => {
-    console.log(getThemeMode);
     const getVariants = getThemeVariants(getThemeMode);
     setThemeData(getVariants);
     setCurrentTheme(getThemeMode);

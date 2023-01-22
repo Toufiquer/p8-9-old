@@ -3,17 +3,22 @@ import React, { useContext, useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ThemeData } from "../../App";
+import { findChartDataById } from "../utilities/findChartDataById";
 import ChartsList from "./ChartsList";
 import ChartsOutlet from "./ChartsOutlet";
 const Charts = () => {
   const navigate = useNavigate();
   const [charts, setCharts] = useState({});
+  const [data, setData] = useState([]);
   useEffect(() => {
     axios.get("charts.json").then((data) => setCharts(data.data));
   }, []);
   const handleCharts = (id) => {
     navigate(`${id}`);
-    console.log(id);
+    const chartData = findChartDataById(id, charts);
+    const newData = [...chartData];
+    newData.shift();
+    setData(newData);
   };
   const [themeData] = useContext(ThemeData);
   const { background, backgroundI, text, border } = themeData;
@@ -24,7 +29,7 @@ const Charts = () => {
           <ChartsList handleCharts={handleCharts} charts={charts}></ChartsList>
         </div>
         <div className={`${border} mx-2 p-2`}>
-          <ChartsOutlet></ChartsOutlet>
+          <ChartsOutlet data={data}></ChartsOutlet>
         </div>
       </div>
     </div>

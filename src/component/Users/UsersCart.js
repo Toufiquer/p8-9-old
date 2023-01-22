@@ -7,9 +7,7 @@ const UsersCart = ({ users, handleRemove }) => {
   const { border, background } = themeData;
   const maxUsers = [...users];
   if (maxUsers.length >= 4) {
-    console.log(maxUsers);
     maxUsers.length = 4;
-    console.log(maxUsers);
   }
   return (
     <div className={`${border} p-2 text-center text-2xl ${background} z-10`}>
