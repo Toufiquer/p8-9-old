@@ -6,8 +6,14 @@ import UsersContainer from "./UsersContainer";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
+  const [cartUsers, setCartUsers] = useState([]);
   useEffect(() => {
-    axios.get("usersData.json").then((data) => setUsers(data.data));
+    axios.get("usersData.json").then((data) => {
+      setUsers(data.data);
+      const cartData = [...data.data];
+      cartData.length = 4;
+      setCartUsers(cartData);
+    });
   }, []);
   const [themeData] = useContext(ThemeData);
   const { background, text } = themeData;
@@ -20,7 +26,7 @@ const Users = () => {
   return (
     <div className={`${background} min-h-screen p-4 pt-16 grid grid-cols-1 md:grid-cols-[1fr_360px] ${text} gap-2`}>
       <UsersContainer users={users} handleAdd={handleAdd} handleRemove={handleRemove}></UsersContainer>
-      <UsersCart users={users} handleAdd={handleAdd} handleRemove={handleRemove}></UsersCart>
+      <UsersCart users={cartUsers} handleRemove={handleRemove}></UsersCart>
     </div>
   );
 };

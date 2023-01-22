@@ -34,7 +34,7 @@ const User = ({ user: { id, name, email, img } }) => {
               Remove <UserMinusIcon className={`h-6 w-6 ml-2`}></UserMinusIcon>
             </div>
           </ButtonRemoveUser>
-        </div>
+        </div> 
         <ButtonDetailsUser name={name}>
           <UserCircleIcon className={`h-6 w-6`}></UserCircleIcon>
         </ButtonDetailsUser>
