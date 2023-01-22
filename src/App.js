@@ -11,6 +11,7 @@ import Charts from "./component/Charts/Charts";
 import NotFound from "./component/NotFound/NotFound";
 import UserDetails from "./component/Users/UserDetails";
 import ProductDetails from "./component/Products/ProductDetails";
+import ChartsOutlet from "./component/Charts/ChartsOutlet";
 export const ThemeMode = createContext("dark");
 export const ThemeData = createContext({});
 function App() {
@@ -33,7 +34,9 @@ function App() {
           <Route path="/users/:id" element={<UserDetails></UserDetails>}></Route>
           <Route path="/products" element={<Products></Products>}></Route>
           <Route path="/products/:id" element={<ProductDetails></ProductDetails>}></Route>
-          <Route path="/charts" element={<Charts></Charts>}></Route>
+          <Route path="/charts" element={<Charts></Charts>}>
+            <Route path=":id" element={<ChartsOutlet></ChartsOutlet>}></Route>
+          </Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </ThemeData.Provider>
