@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ThemeData } from "../../App";
 import { ButtonAddUser, ButtonRemoveUser, ButtonDetailsUser } from "../Button/Button";
 
-const User = ({ user: { id, name, email, img } }) => {
+const User = ({ user: { id, name, email, img }, handleAdd, handleRemove }) => {
   const navigate = useNavigate();
   const [themeData] = useContext(ThemeData);
   const { border } = themeData;
@@ -26,12 +26,12 @@ const User = ({ user: { id, name, email, img } }) => {
       </div>
       <div className="flex justify-between">
         <div className="flex">
-          <ButtonAddUser>
+          <ButtonAddUser handler={() => handleAdd(id)}>
             <div className="flex">
               Add <UserPlusIcon className={`h-6 w-6 ml-2`}></UserPlusIcon>
             </div>
           </ButtonAddUser>
-          <ButtonRemoveUser>
+          <ButtonRemoveUser handler={() => handleRemove(id)}>
             <div className="flex">
               Remove <UserMinusIcon className={`h-6 w-6 ml-2`}></UserMinusIcon>
             </div>

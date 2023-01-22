@@ -10,7 +10,7 @@ const Navbar = () => {
   const { backgroundI, hoverBackgroundI, text, hoverText, textI, hoverTextI, textII, hoverTextII } = themeData;
   const iconClass = ` h-6 w-6 ${textII} ${hoverTextII} cursor-pointer`;
   return (
-    <div className={`pb-3 pt-2 ${backgroundI} ${text} text-xl ${hoverBackgroundI} text-center  duration-1000 fixed w-full`}>
+    <div className={`pb-3 pt-2 ${backgroundI} ${text} text-xl ${hoverBackgroundI} text-center  duration-1000 fixed w-full z-20`}>
       <header className={`flex justify-between items-center container mx-auto flex-col md:flex-row`}>
         <h2 className={`flex justify-between items-center ${textI} ${hoverTextI} text-semibold text-left md:w-auto w-full px-4`}>
           Toufiquer{" "}
