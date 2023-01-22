@@ -1,11 +1,11 @@
-import { EllipsisHorizontalCircleIcon, ShoppingCartIcon, TrashIcon } from "@heroicons/react/24/solid";
+import { EllipsisHorizontalCircleIcon, MinusIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ThemeData } from "../../App";
 import { ButtonAdd, ButtonDetails, ButtonRemove } from "../Button/Button";
 
-const Product = ({ product: { id, name, picture, price }, product, handleAdd, handleRemove, handleDecrease }) => {
+const Product = ({ product: { id, name, picture, price }, handleAdd, handleRemove, handleDecrease }) => {
   const [themeData] = useContext(ThemeData);
   const { border } = themeData;
   const navigate = useNavigate();
@@ -22,11 +22,16 @@ const Product = ({ product: { id, name, picture, price }, product, handleAdd, ha
         <div className="flex">
           <div className="flex justify-between">
             <div className="flex ml-2 gap-1">
-              <ButtonAdd id={id} handler={handleAdd}>
-                <div className="flex">
-                  Add <ShoppingCartIcon className={`h-6 w-6 ml-2`}></ShoppingCartIcon>
+              <ButtonAdd id={id} handler={() => handleAdd(id)}>
+                <div className="flex items-center justify-center">
+                  <PlusIcon className={`h-6 w-6 ml-[-8px]`}></PlusIcon>
                 </div>
               </ButtonAdd>
+              <ButtonRemove handler={() => handleDecrease(id)}>
+                <div className="flex">
+                  <MinusIcon className={`h-6 w-6 ml-[-8px]`}></MinusIcon>
+                </div>
+              </ButtonRemove>
               <ButtonRemove handler={() => handleRemove(id)}>
                 <div className="flex">
                   Remove <TrashIcon className={`h-6 w-6 ml-2`}></TrashIcon>
