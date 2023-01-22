@@ -9,6 +9,7 @@ import { useThemeDetector } from "./hooks/useThemeDetector";
 import getThemeVariants from "./component/Theme/getThemeVariants";
 import Charts from "./component/Charts/Charts";
 import NotFound from "./component/NotFound/NotFound";
+import UserDetails from "./component/Users/UserDetails";
 export const ThemeMode = createContext("dark");
 export const ThemeData = createContext({});
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/users" element={<Users></Users>}></Route>
+          <Route path="/users/:id" element={<UserDetails></UserDetails>}></Route>
           <Route path="/products" element={<Products></Products>}></Route>
           <Route path="/charts" element={<Charts></Charts>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
